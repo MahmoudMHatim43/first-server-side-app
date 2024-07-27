@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /*  */
+  background: url("/public/app-bg.jpg") center/cover no-repeat;
+  /*  */
+  min-height: 100vh;
+  /*  */
+  position: relative;
+  z-index: -2;
+}
+
+body::before {
+  /*  */
+  content: "";
+  background-color: black;
+  opacity: 0.35;
+  /*  */
+  width: 100%;
+  height: 100%;
+  /*  */
+  position: absolute;
+  z-index: -1;
+}
