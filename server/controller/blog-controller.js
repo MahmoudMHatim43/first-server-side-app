@@ -48,7 +48,7 @@ const updateBlog = async (request, response) => {
     });
   } catch (error) {
     console.log(error);
-    return response.send(500).json({ message: "Could not update blog" });
+    return response.status(500).json({ message: "Could not update blog" });
   }
   return !currBlogToUpdate
     ? response.status(404).json({ message: "Unable to update blog" })

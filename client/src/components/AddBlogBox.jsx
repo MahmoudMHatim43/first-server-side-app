@@ -1,12 +1,12 @@
 import React from "react";
 import { BlogGlobalContext } from "../context";
 
-const AddBlogBox = ({ saveBlog }) => {
+const AddBlogBox = ({ saveBlog, edit }) => {
   const { blogData, setBlogData } = React.useContext(BlogGlobalContext);
   return (
-    <div className="border flex flex-col items-center p-5">
+    <div className="flex flex-col items-center p-5">
       <h1 className="text-2xl font-bold text-orange-400 mb-5">
-        Add A New Blog
+        {edit ? "Edit Blog" : "Add A New Blog"}
       </h1>
       <div className="flex flex-col mb-10 w-[70%] rounded-2xl overflow-hidden shadow-xl">
         <input
@@ -30,7 +30,7 @@ const AddBlogBox = ({ saveBlog }) => {
         className="text-lg font-bold bg-white hover:bg-orange-400 px-5 py-2 rounded-2xl shadow-outline transition-colors duration-300"
         onClick={saveBlog}
       >
-        Push Blog 💭
+        {edit ? "Modify Blog 🖋️" : "Post Blog 💭"}
       </button>
     </div>
   );
