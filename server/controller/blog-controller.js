@@ -19,7 +19,7 @@ const fetchBlogList = async (request, response) => {
 // add new blog:
 const addNewBlog = async (request, response) => {
   const { title, description } = request.body;
-  const lastCreatedBlog = new Blog({ title, description, date: currDate });
+  const lastCreatedBlog = new Blog({ title, description, date: new Date() });
   try {
     await lastCreatedBlog.save();
   } catch (error) {
